@@ -10,15 +10,12 @@ A Flutter app to browse and discover books, search with filters, view details, m
 ## Table of Contents
 
 1. [Screens & Features](#screens--features)  
-2. [Tech Stack](#tech-stack)  
-3. [Architecture](#architecture)  
-4. [State Management](#state-management)  
-5. [Project Setup](#project-setup)  
-6. [Firebase Setup](#firebase-setup)  
-7. [Google Books API Key](#google-books-api-key)  
-8. [Build a Release APK](#build-a-release-apk)  
-9. [Screenshots](#screenshots)  
-10. [Assumptions & Limitations](#assumptions--limitations)
+2. [Tech Stack](#tech-stack)    
+3. [State Management](#state-management)  
+4. [Firebase Setup](#firebase-setup)  
+5. [Google Books API Key](#google-books-api-key)
+6. 9. [Screenshots](#screenshots)
+7. [Build a Release APK](#build-a-release-apk)   
 
 ---
 
