@@ -156,6 +156,15 @@ Find this line:
 const _apiKey = "YOUR_API_KEY_HERE"; // Replace it with your actual Key
 ```
 
+### 3) Not related with Google Book API but still change
+The supportive things is used in `lib/feature/profile/presentation/profile_screen.dart`.
+```dart
+path: 'aniketom70@gmail.com', // Change to your own support email
+```
+```dart
+final uri = Uri.parse('https://example.com/privacy'); // Change to your privacy policy link
+```
+
 ## Screenshots
 
 <p align="center">
