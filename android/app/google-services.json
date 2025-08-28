@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "785916255104-jc08uj7ls1mde8oj1hmk8og43rt2sjfh.apps.googleusercontent.com",
+          "client_id": "785916255104-ibjptonhabpb9mtmu1miur4ufltfq4r0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.ayush.book_discovery",
-            "certificate_hash": "53871018d1e4e56980991c52950710a2a314d5bc"
+            "certificate_hash": "60ec582e32294dce34cd37151eee740cf276be4a"
           }
         },
         {

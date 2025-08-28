@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'books_api.dart';
 import 'book_models.dart';
-import '../analytics/analytics_store.dart';
 import 'search_history_store.dart';
 
 // DI providers
@@ -13,15 +12,8 @@ final booksApiProvider = Provider<BooksApi>(
 final historyStoreProvider =
 Provider<SearchHistoryStore>((ref) => SearchHistoryStore());
 
-final analyticsStoreProvider = Provider<AnalyticsStore>((ref) {
-  final store = AnalyticsStore();
-  store.load(); // lazy-load persisted analytics
-  return store;
-});
-
 final booksRepoProvider = Provider<BooksRepository>((ref) => BooksRepository(
   api: ref.read(booksApiProvider),
-  analytics: ref.read(analyticsStoreProvider),
   history: ref.read(historyStoreProvider),
 ));
 
@@ -88,12 +80,10 @@ class SearchFilter {
 // --- Repository ---
 class BooksRepository {
   final BooksApi api;
-  final AnalyticsStore analytics;
   final SearchHistoryStore history;
 
   BooksRepository({
     required this.api,
-    required this.analytics,
     required this.history,
   });
 
@@ -110,19 +100,6 @@ class BooksRepository {
     'art',
     'programming',
   ];
-
-  Future<List<Book>> discoveryFeed({int maxResults = 30}) async {
-    final seed = _discoverySeeds[Random().nextInt(_discoverySeeds.length)];
-    // Prefer relevance, books only, lite payload
-    final results = await api.search(
-      seed,
-      maxResults: maxResults,
-      orderBy: 'relevance',
-      printType: 'books',
-    );
-    await analytics.addResults(results);
-    return results;
-  }
 
   // Basic search. Persists history + analytics.
   Future<List<Book>> search(
@@ -152,7 +129,6 @@ class BooksRepository {
 
       // Side effects
       await history.add(query);
-      await analytics.addResults(results);
       // ignore: avoid_print
       print('[BooksRepository] search("$query") -> ${results.length}');
 
@@ -194,7 +170,6 @@ class BooksRepository {
         filter.currencyCode == null &&
         filter.yearFrom == null &&
         filter.yearTo == null) {
-      await analytics.addResults(resultsFromApi);
       return resultsFromApi;
     }
 
@@ -230,7 +205,6 @@ class BooksRepository {
     }
 
     final filtered = resultsFromApi.where(pass).toList();
-    await analytics.addResults(filtered);
     return filtered;
   }
 
