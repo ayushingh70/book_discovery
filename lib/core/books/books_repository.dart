@@ -6,7 +6,7 @@ import 'search_history_store.dart';
 
 // DI providers
 final booksApiProvider = Provider<BooksApi>(
-      (ref) => BooksApi(apiKey: "AIzaSyCDkoXT-KQ3daB4Sr433-KZrw8xl4wgVqI"), // TODO Replace with your API key
+      (ref) => BooksApi(apiKey: "YOUR_API_KEY_HERE"), // TODO Replace with your API key
 );
 
 final historyStoreProvider =
