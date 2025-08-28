@@ -57,12 +57,103 @@ A Flutter app to browse and discover books, search with filters, view details, m
 
 ---
 
-## Project Setup
+## Firebase Setup
 
-### 1) Clone the repo
+The app uses **Firebase Authentication** and optionally **Realtime Database** for persisting profile changes.
+
+### 1) Create a Firebase Project
+- Go to [Firebase Console](https://console.firebase.google.com/) → “Add project” → follow the steps.
+
+### 2) Enable Authentication
+- In Firebase Console: **Authentication → Get started**
+- Enable **Email/Password**  
+- Enable **Google Sign-In** if you want Google login (requires SHA-1 for Android).
+
+### 3) Add Your Apps & Download Config Files
+
+#### 🔹 Android
+1. Firebase Console → Project settings → **General** → “Your apps” → **Android** → *Add app*.
+2. Use your Android app ID (package name):  
+   Example: `com.ayush.book_discovery` (check in `android/app/src/main/AndroidManifest.xml`).
+3. Download **`google-services.json`** and place/replace it in: android/app/google-service.json
+4. Update Gradle:
+- In `android/build.gradle` (project-level):
+  ```gradle
+  dependencies {
+    classpath 'com.google.gms:google-services:4.4.2'
+  }
+  ```
+- In `android/app/build.gradle` (module-level), add at the bottom:
+  ```gradle
+  apply plugin: 'com.google.gms.google-services'
+  ```
+
+#### 🔹 iOS
+1. Firebase Console → Project settings → **General** → “Your apps” → **iOS** → *Add app*.
+2. Use your iOS **Bundle Identifier** (Xcode → Runner target → *General* → *Identity*).
+3. Download **`GoogleService-Info.plist`** and place/replace it in: ios/Runner/GoogleService-Info.plist
+4. In Xcode, ensure the file is added to the Runner target.
+
+### 4) Generate `firebase_options.dart`
+We use the **FlutterFire CLI** to generate strongly-typed Firebase configs.
 
 ```bash
-git clone https://github.com/ayushingh70/book_discovery.git
-cd book_discovery
+dart pub global activate flutterfire_cli
+flutterfire configure
+```
 
-2) Install Flutter dependencies
+This generates or updates: lib/firebase_options.dart
+Replace the existing file in the repo with this generated one (so it points to your Firebase project).
+
+### 5) (Optional) Realtime Database
+
+1. In Firebase Console → Build → Realtime Database → Create Database.
+2. Start in test mode (recommended for local dev; secure later).
+3. Example dev rules:
+```rules
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+```
+
+4. Example stricter rules for per-user docs:
+```rules
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}
+```
+---
+
+## Google Books API Key Setup
+
+The app fetches book data using the **Google Books API**.  
+You need your own API key to run the app without quota issues.
+
+### 1) Get an API Key
+1. Go to [Google Cloud Console](https://console.cloud.google.com/).
+2. Create a new project (or select an existing one).
+3. From the left menu → **APIs & Services → Enabled APIs & services**.
+4. Click **+ ENABLE APIS AND SERVICES** → search for **Books API** → Enable it.
+5. Go to **APIs & Services → Credentials**.
+6. Click **+ CREATE CREDENTIALS → API key**.
+7. Copy the generated API key.
+
+### 2) Add the Key in Code
+The API key is used in `lib/core/books/books_repository.dart`.
+
+Find this line:
+```dart
+const _apiKey = "YOUR_API_KEY_HERE"; // Replace it with your actual Key
+```
+
+
