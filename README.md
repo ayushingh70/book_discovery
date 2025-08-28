@@ -1,16 +1,53 @@
-# book_discovery
+# Book Discovery
 
-It is a Books Discovery App with social and email authentication, book search from Google Books API, contact access, and a user profile.
+A Flutter app to browse and discover books, search with filters, view details, manage contacts, analyze demo trends with charts, and manage a user profile with Firebase Auth.
 
-## Getting Started
+> **Note (assignment context):**  
+> This repository was created as part of a company assignment. It implements only the features and UI from the recruiter’s Figma and the written task spec. The Figma file cannot be shared for security reasons.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Table of Contents
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. [Screens & Features](#screens--features)  
+2. [Tech Stack](#tech-stack)  
+3. [Architecture](#architecture)  
+4. [State Management](#state-management)  
+5. [Project Setup](#project-setup)  
+6. [Firebase Setup](#firebase-setup)  
+7. [Google Books API Key](#google-books-api-key)  
+8. [Build a Release APK](#build-a-release-apk)  
+9. [Screenshots](#screenshots)  
+10. [Assumptions & Limitations](#assumptions--limitations)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Screens & Features
+
+- **Onboarding**: swipeable intro with CTA to Sign Up / Log In  
+- **Auth**: email/password (Google supported if enabled)  
+- **Home (Courses/Books)**: search bar, discovery, filters (categories + price), list/grid view, details  
+- **Search**: search with chips history, reusable filter bottom sheet, list/grid results  
+- **Contacts**: reads device contacts (permission-gated), bottom sheet actions (call, SMS, email)  
+- **Profile**: show name, email, avatar; change local avatar (gallery), edit name, manage Google account, logout  
+- **Analytics**: **demo** charts (donut/pie, line, bar) using `fl_chart` with a floating card design
+
+---
+
+## Tech Stack
+
+- **Framework:** Flutter (Dart)
+- **Charts:** `fl_chart`
+- **State:** Riverpod (`flutter_riverpod`)
+- **Auth:** Firebase Authentication
+- **(Optional) Profile persistence:** Firebase Realtime Database
+- **Permissions:** `permission_handler`
+- **Images:** `image_picker`
+- **Device info:** `package_info_plus`
+- **URL intents:** `url_launcher`
+
+---
+
+## Architecture
+
+**Feature-first** structure:
