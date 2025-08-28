@@ -48,19 +48,10 @@ A Flutter app to browse and discover books, search with filters, view details, m
 
 ---
 
-## Architecture
-
-**Feature-first** structure: - 
-**Repositories** (e.g., `books_repository.dart`) wrap API / data access (Google Books, local filters, etc.).  
-- **Feature layers** contain UI + small controllers per feature.  
-- **Reusable widgets** live under `features/common/widgets`.
-
----
-
 ## State Management
 
 - **Riverpod** for state & DI:
-  - `StateNotifierProvider` for favorites, etc.
+  - `StateNotifierProvider` for favorites(Removed), etc. 
   - `Provider`/`ConsumerWidget`/`ConsumerStatefulWidget` patterns in UI
 - **Why Riverpod?** Simple, testable, no global singletons, compile-time safety.
 
@@ -69,7 +60,7 @@ A Flutter app to browse and discover books, search with filters, view details, m
 ## Project Setup
 
 ### 1) Clone the repo
-
-```bash
 git clone https://github.com/ayushingh70/book_discovery.git
 cd book_discovery
+flutter pub get
+flutter run
