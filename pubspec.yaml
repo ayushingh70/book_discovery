@@ -1,0 +1,62 @@
+name: book_discovery
+description: "It is a Books Discovery App with social and email authentication, book search from Google Books API, contact access, and a user profile."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Default icons
+  cupertino_icons: ^1.0.8
+
+  # --- State Management ---
+  flutter_riverpod: ^2.5.1
+
+  # --- Firebase Auth ---
+  firebase_core: ^3.2.0
+  firebase_auth: ^5.2.0
+  firebase_database: ^11.0.3
+  google_sign_in: ^6.2.1
+
+  # --- API Calls ---
+  dio: ^5.4.0
+
+  # --- Local Storage ---
+  shared_preferences: ^2.3.2
+
+  # --- Charts for Analytics ---
+  fl_chart: ^1.0.0
+
+  # --- Info ---
+  package_info_plus: ^8.0.0
+
+  # --- Contacts + Permissions + Redirect ---
+  permission_handler: ^12.0.1
+  flutter_contacts: ^1.1.7
+  url_launcher: ^6.3.0
+
+  # --- Image Picker for Profile Picture ---
+  image_picker: ^1.1.2
+
+  # --- JSON Serialization ---
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+  # --- Code Generation (still needed for json_serializable only) ---
+  json_serializable: ^6.10.0
+  build_runner: ^2.7.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/

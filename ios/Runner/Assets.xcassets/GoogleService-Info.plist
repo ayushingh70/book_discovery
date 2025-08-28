@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>785916255104-mkn95aj04ar5t0n5ver28u9mt5uh6jij.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.785916255104-mkn95aj04ar5t0n5ver28u9mt5uh6jij</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>785916255104-jc08uj7ls1mde8oj1hmk8og43rt2sjfh.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD1AaVKxAHScVogAKlOq2NoDO2NvT2Js2k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>785916255104</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ayush.bookDiscovery</string>
+	<key>PROJECT_ID</key>
+	<string>book-discovery-c7f4a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>book-discovery-c7f4a.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:785916255104:ios:de07bcfad9d068d3537f65</string>
+</dict>
+</plist>

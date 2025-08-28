@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "785916255104",
+    "firebase_url": "https://book-discovery-c7f4a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "book-discovery-c7f4a",
+    "storage_bucket": "book-discovery-c7f4a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785916255104:android:87a9c8db58ce2ae8537f65",
+        "android_client_info": {
+          "package_name": "com.ayush.book_discovery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785916255104-jc08uj7ls1mde8oj1hmk8og43rt2sjfh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ayush.book_discovery",
+            "certificate_hash": "53871018d1e4e56980991c52950710a2a314d5bc"
+          }
+        },
+        {
+          "client_id": "785916255104-p432rgo1q2vatpt1q2q4vund71n5ndmt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0ycAodvvkQYUuO95cKAnKC70II1tGnw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785916255104-p432rgo1q2vatpt1q2q4vund71n5ndmt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "785916255104-mkn95aj04ar5t0n5ver28u9mt5uh6jij.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ayush.bookDiscovery"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
