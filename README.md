@@ -156,4 +156,12 @@ Find this line:
 const _apiKey = "YOUR_API_KEY_HERE"; // Replace it with your actual Key
 ```
 
+## Screenshots
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/77122706-a9ce-4832-8bb7-f0b455da6d8c" alt="Onboarding" width="47%"/>
+  &nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/798c7c2d-8878-4f1f-8069-613d50508ca5" alt="Main" width="47%"/>
+</p>
+
 
