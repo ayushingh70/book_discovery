@@ -3,7 +3,7 @@
 A Flutter app to browse and discover books, search with filters, view details, manage contacts, analyze demo trends with charts, and manage a user profile with Firebase Auth.
 
 > **Note (assignment context):**  
-> This repository was created as part of a company assignment. It implements only the features and UI from the recruiter’s Figma and the written task spec. The Figma file cannot be shared for security reasons.
+> This repository was created as part of a company assignment. It implements only the features and UI from the recruiter’s Figma and the written task spec in Document. The Figma file cannot be shared for security reasons.
 
 ---
 
@@ -60,7 +60,9 @@ A Flutter app to browse and discover books, search with filters, view details, m
 ## Project Setup
 
 ### 1) Clone the repo
+
+```bash
 git clone https://github.com/ayushingh70/book_discovery.git
 cd book_discovery
-flutter pub get
-flutter run
+
+2) Install Flutter dependencies
