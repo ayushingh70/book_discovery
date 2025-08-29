@@ -63,17 +63,17 @@ A beautifully crafted Flutter app for browsing and discovering books, searching 
 The app uses **Firebase Authentication** and optionally **Realtime Database** for profile persistence.
 
 ### 1. Create a Firebase Project
-- Go to [Firebase Console](https://console.firebase.google.com/) → “Add project” → follow setup steps.
+- Go to [Firebase Console](https://console.firebase.google.com/) > “Add project” > follow setup steps.
 
 ### 2. Enable Authentication
-- Firebase Console → **Authentication → Get started**
+- Firebase Console > **Authentication > Get started**
 - Enable **Email/Password**
 - Enable **Google Sign-In** (requires SHA-1 for Android)
 
 ### 3. Add Your Apps & Download Config Files
 
-#### 📱 Android
-1. Firebase Console → Project settings → **General** → “Your apps” → **Android** → *Add app*
+#### Android
+1. Firebase Console > Project settings > **General** >“Your apps” > **Android** > *Add app*
 2. Use your Android app ID (e.g., `com.ayush.book_discovery`)
 3. Download `google-services.json` → place in `android/app/`
 4. Update Gradle files:
@@ -89,9 +89,9 @@ dependencies {
   apply plugin: 'com.google.gms.google-services'
   ```
 
-#### 🔹 iOS
-1. Firebase Console → Project settings → **General** → “Your apps” → **iOS** → *Add app*.
-2. Use your iOS **Bundle Identifier** (Xcode → Runner target → *General* → *Identity*).
+#### iOS
+1. Firebase Console > Project settings > **General** > “Your apps” > **iOS** > *Add app*.
+2. Use your iOS **Bundle Identifier** (Xcode > Runner target > *General* > *Identity*).
 3. Download **`GoogleService-Info.plist`** and place/replace it in: ios/Runner/GoogleService-Info.plist
 4. In Xcode, ensure the file is added to the Runner target.
 
@@ -143,10 +143,10 @@ You need your own API key to run the app without quota issues.
 ### 1) Get an API Key
 1. Go to [Google Cloud Console](https://console.cloud.google.com/).
 2. Create a new project (or select an existing one).
-3. From the left menu → **APIs & Services → Enabled APIs & services**.
-4. Click **+ ENABLE APIS AND SERVICES** → search for **Books API** → Enable it.
-5. Go to **APIs & Services → Credentials**.
-6. Click **+ CREATE CREDENTIALS → API key**.
+3. From the left menu > **APIs & Services > Enabled APIs & services**.
+4. Click **+ ENABLE APIS AND SERVICES** > search for **Books API** > Enable it.
+5. Go to **APIs & Services > Credentials**.
+6. Click **+ CREATE CREDENTIALS > API key**.
 7. Copy the generated API key.
 
 ### 2) Add the Key in Code
@@ -157,7 +157,7 @@ Find this line:
 const _apiKey = "YOUR_API_KEY_HERE"; // Replace it with your actual Key
 ```
 
-### 3) Not related with Google Book API but still change
+### 3) Not related with Google Book API but still change it
 The supportive things is used in `lib/feature/profile/presentation/profile_screen.dart`.
 ```dart
 path: 'aniketom70@gmail.com', // Change to your own support email
