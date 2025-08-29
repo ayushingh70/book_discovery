@@ -177,5 +177,5 @@ final uri = Uri.parse('https://example.com/privacy'); // Change to your privacy 
 ## 📱 Download APK
 
 You can download the latest release APK here:  
-[Download BookDisc.apk](https://github.com/ayushingh70/book_discovery/releases/tag/v1.0.3)
+[Download BookDisc.apk](https://github.com/ayushingh70/book_discovery/releases/tag/1.0.3)
 
