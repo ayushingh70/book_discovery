@@ -3,7 +3,7 @@
 A beautifully crafted Flutter app for browsing and discovering books, searching with filters, viewing details, managing contacts, analyzing trends with charts, and handling user profiles via Firebase Auth.
 
 > **Note (Assignment Context):**  
-> This repository was created as part of a company assignment. It strictly implements features and UI based on the recruiter’s Figma and written task spec. The Figma file is confidential and cannot be shared.
+> This repository is created as part of a company assignment. It strictly implements features and UI based on the recruiter’s Figma and written task spec. The Figma file is confidential and cannot be shared.
 
 ---
 
