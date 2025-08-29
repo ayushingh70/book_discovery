@@ -170,4 +170,8 @@ final uri = Uri.parse('https://example.com/privacy'); // Change to your privacy 
   <img src="https://github.com/user-attachments/assets/798c7c2d-8878-4f1f-8069-613d50508ca5" alt="Main" width="47%"/>
 </p>
 
+## 📱 Download APK
+
+You can download the latest release APK here:  
+[Download BookDisc.apk](https://github.com/ayushingh70/book_discovery/releases/tag/v1.0.0)
 
