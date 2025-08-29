@@ -1,13 +1,13 @@
-# 📚 Book Discovery
+# Book Discovery
 
 A beautifully crafted Flutter app for browsing and discovering books, searching with filters, viewing details, managing contacts, analyzing trends with charts, and handling user profiles via Firebase Auth.
 
-> ⚠️ **Note (Assignment Context):**  
+> **Note (Assignment Context):**  
 > This repository was created as part of a company assignment. It strictly implements features and UI based on the recruiter’s Figma and written task spec. The Figma file is confidential and cannot be shared.
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
 1. [Screens & Features](#screens--features)  
 2. [Tech Stack](#tech-stack)    
@@ -19,7 +19,7 @@ A beautifully crafted Flutter app for browsing and discovering books, searching 
 
 ---
 
-## 🧩 Screens & Features
+## Screens & Features
 
 - **Onboarding**: Swipeable intro with CTA to Sign Up / Log In  
 - **Authentication**: Email/password login (Google Sign-In optional)  
@@ -31,7 +31,7 @@ A beautifully crafted Flutter app for browsing and discovering books, searching 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category         | Tools & Packages                     |
 |------------------|--------------------------------------|
@@ -44,24 +44,21 @@ A beautifully crafted Flutter app for browsing and discovering books, searching 
 | Image Picker     | `image_picker`                       |
 | Device Info      | `package_info_plus`                  |
 | URL Intents      | `url_launcher`                       |
-
+| APIs             | `Google Book APIs`                   |
 ---
 
-## 🔄 State Management
+## State Management
 
 - **Riverpod** for state and dependency injection:
   - `StateNotifierProvider` for features like favorites (removed in current version)
   - `Provider`, `ConsumerWidget`, and `ConsumerStatefulWidget` patterns in UI
 
 **Why Riverpod?**  
-✅ Simple  
-✅ Testable  
-✅ No global singletons  
-✅ Compile-time safety
+ Simple - Testable - No global singletons - Compile-time safety
 
 ---
 
-## 🔥 Firebase Setup
+## Firebase Setup
 
 The app uses **Firebase Authentication** and optionally **Realtime Database** for profile persistence.
 
