@@ -1,13 +1,13 @@
-# Book Discovery
+# 📚 Book Discovery
 
-A Flutter app to browse and discover books, search with filters, view details, manage contacts, analyze demo trends with charts, and manage a user profile with Firebase Auth.
+A beautifully crafted Flutter app for browsing and discovering books, searching with filters, viewing details, managing contacts, analyzing trends with charts, and handling user profiles via Firebase Auth.
 
-> **Note (assignment context):**  
-> This repository was created as part of a company assignment. It implements only the features and UI from the recruiter’s Figma and the written task spec in Document. The Figma file cannot be shared for security reasons.
+> ⚠️ **Note (Assignment Context):**  
+> This repository was created as part of a company assignment. It strictly implements features and UI based on the recruiter’s Figma and written task spec. The Figma file is confidential and cannot be shared.
 
 ---
 
-## Table of Contents
+## 📖 Table of Contents
 
 1. [Screens & Features](#screens--features)  
 2. [Tech Stack](#tech-stack)    
@@ -15,72 +15,79 @@ A Flutter app to browse and discover books, search with filters, view details, m
 4. [Firebase Setup](#firebase-setup)  
 5. [Google Books API Key](#google-books-api-key)
 6. [Screenshots](#screenshots)
-7. [Build a Release APK](#build-a-release-apk)   
+7. [Download APK](#download-apk)
 
 ---
 
-## Screens & Features
+## 🧩 Screens & Features
 
-- **Onboarding**: swipeable intro with CTA to Sign Up / Log In  
-- **Auth**: email/password (Google supported if enabled)  
-- **Home (Courses/Books)**: search bar, discovery, filters (categories + price), list/grid view, details  
-- **Search**: search with chips history, reusable filter bottom sheet, list/grid results  
-- **Contacts**: reads device contacts (permission-gated), bottom sheet actions (call, SMS, email)  
-- **Profile**: show name, email, avatar; change local avatar (gallery), edit name, manage Google account, logout  
-- **Analytics**: **demo** charts (donut/pie, line, bar) using `fl_chart` with a floating card design
-
----
-
-## Tech Stack
-
-- **Framework:** Flutter (Dart)
-- **Charts:** `fl_chart`
-- **State:** Riverpod (`flutter_riverpod`)
-- **Auth:** Firebase Authentication
-- **Profile persistence:** Firebase Realtime Database
-- **Permissions:** `permission_handler`
-- **Images:** `image_picker`
-- **Device info:** `package_info_plus`
-- **URL intents:** `url_launcher`
+- **Onboarding**: Swipeable intro with CTA to Sign Up / Log In  
+- **Authentication**: Email/password login (Google Sign-In optional)  
+- **Home (Courses/Books)**: Search bar, discovery, filters (category + price), list/grid view, book details  
+- **Search**: Chip-based history, reusable filter bottom sheet, list/grid results  
+- **Contacts**: Reads device contacts (permission-gated), bottom sheet actions (call, SMS, email)  
+- **Profile**: Display name, email, avatar; change avatar (gallery), edit name, manage Google account, logout  
+- **Analytics**: Demo charts (donut/pie, line, bar) using `fl_chart` with floating card UI
 
 ---
 
-## State Management
+## 🛠️ Tech Stack
 
-- **Riverpod** for state & DI:
-  - `StateNotifierProvider` for favorites(Removed), etc. 
-  - `Provider`/`ConsumerWidget`/`ConsumerStatefulWidget` patterns in UI
-- **Why Riverpod?** Simple, testable, no global singletons, compile-time safety.
+| Category         | Tools & Packages                     |
+|------------------|--------------------------------------|
+| Framework        | Flutter (Dart)                       |
+| Charts           | `fl_chart`                           |
+| State Management | Riverpod (`flutter_riverpod`)        |
+| Auth             | Firebase Authentication              |
+| Persistence      | Firebase Realtime Database           |
+| Permissions      | `permission_handler`                 |
+| Image Picker     | `image_picker`                       |
+| Device Info      | `package_info_plus`                  |
+| URL Intents      | `url_launcher`                       |
 
 ---
 
-## Firebase Setup
+## 🔄 State Management
 
-The app uses **Firebase Authentication** and optionally **Realtime Database** for persisting profile changes.
+- **Riverpod** for state and dependency injection:
+  - `StateNotifierProvider` for features like favorites (removed in current version)
+  - `Provider`, `ConsumerWidget`, and `ConsumerStatefulWidget` patterns in UI
 
-### 1) Create a Firebase Project
-- Go to [Firebase Console](https://console.firebase.google.com/) → “Add project” → follow the steps.
+**Why Riverpod?**  
+✅ Simple  
+✅ Testable  
+✅ No global singletons  
+✅ Compile-time safety
 
-### 2) Enable Authentication
-- In Firebase Console: **Authentication → Get started**
-- Enable **Email/Password**  
-- Enable **Google Sign-In** if you want Google login (requires SHA-1 for Android).
+---
 
-### 3) Add Your Apps & Download Config Files
+## 🔥 Firebase Setup
 
-#### 🔹 Android
-1. Firebase Console → Project settings → **General** → “Your apps” → **Android** → *Add app*.
-2. Use your Android app ID (package name):  
-   Example: `com.ayush.book_discovery` (check in `android/app/src/main/AndroidManifest.xml`).
-3. Download **`google-services.json`** and place/replace it in: android/app/google-service.json
-4. Update Gradle:
-- In `android/build.gradle` (project-level):
-  ```gradle
-  dependencies {
-    classpath 'com.google.gms:google-services:4.4.2'
-  }
-  ```
-- In `android/app/build.gradle` (module-level), add at the bottom:
+The app uses **Firebase Authentication** and optionally **Realtime Database** for profile persistence.
+
+### 1. Create a Firebase Project
+- Go to [Firebase Console](https://console.firebase.google.com/) → “Add project” → follow setup steps.
+
+### 2. Enable Authentication
+- Firebase Console → **Authentication → Get started**
+- Enable **Email/Password**
+- Enable **Google Sign-In** (requires SHA-1 for Android)
+
+### 3. Add Your Apps & Download Config Files
+
+#### 📱 Android
+1. Firebase Console → Project settings → **General** → “Your apps” → **Android** → *Add app*
+2. Use your Android app ID (e.g., `com.ayush.book_discovery`)
+3. Download `google-services.json` → place in `android/app/`
+4. Update Gradle files:
+
+**Project-level `build.gradle`:**
+```gradle
+dependencies {
+  classpath 'com.google.gms:google-services:4.4.2'
+}
+```
+**App-level `build.gradle`:**
   ```gradle
   apply plugin: 'com.google.gms.google-services'
   ```
@@ -107,7 +114,7 @@ Replace the existing file in the repo with this generated one (so it points to y
 1. In Firebase Console → Build → Realtime Database → Create Database.
 2. Start in test mode (recommended for local dev; secure later).
 3. Example dev rules:
-```rules
+```Json
 {
   "rules": {
     ".read": "auth != null",
@@ -117,7 +124,7 @@ Replace the existing file in the repo with this generated one (so it points to y
 ```
 
 4. Example stricter rules for per-user docs:
-```rules
+```Json
 {
   "rules": {
     "users": {
